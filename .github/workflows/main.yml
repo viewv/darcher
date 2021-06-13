@@ -30,9 +30,6 @@ jobs:
         with:
           node-version: 10.22.0
           
-      - name: Setup ts
-        run: npm install -g ts-node
-          
       - name: Setup Java
         uses: actions/setup-java@v2
         with:
@@ -51,6 +48,17 @@ jobs:
           
       - name: Setup chrome driver
         uses: nanasess/setup-chromedriver@master
+        
+      - name: Setup Project
+        run: |
+          yarn
+          yarn build
+          yarn workspace @darcher/go-ethereum gen:dag
+          
+      - name: Download ChromeProfile
+        run: |
+          wget https://github.com/Troublor/darcher/releases/download/v1.0.0/ChromeProfile.tar.gz
+          tar -xvzf ChromeProfile.tar.gz
       
       - name: test AgroChain
         run: yarn workspace @darcher/examples experiment:AgroChain
