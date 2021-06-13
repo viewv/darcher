@@ -62,9 +62,6 @@ jobs:
       
       - name: ls
         run: echo | ls
-        
-      - name: Setup Project
-        run: yarn
       
       - name: Build project
         run: yarn build
