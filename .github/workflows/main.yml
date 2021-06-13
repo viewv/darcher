@@ -30,6 +30,9 @@ jobs:
         with:
           node-version: 10.22.0
           
+      - name: Setup ts
+        run: npm install -g ts-node
+          
       - name: Setup Java
         uses: actions/setup-java@v2
         with:
