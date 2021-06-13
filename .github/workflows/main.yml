@@ -54,17 +54,20 @@ jobs:
           wget https://github.com/Troublor/darcher/releases/download/v1.0.0/ChromeProfile.tar.gz
           tar -xvzf ChromeProfile.tar.gz
           
-      - name: Download ethash
-        run: wget https://zenodo.org/record/4893187/files/ethash.tar?download=1 -O ethash.tar
+      #- name: Download ethash
+      #  run: wget https://zenodo.org/record/4893187/files/ethash.tar?download=1 -O ethash.tar
           
-      - name: Extract ethash
-        run: tar -xvf ethash.tar
+      #- name: Extract ethash
+      #  run: tar -xvf ethash.tar
       
       - name: ls
         run: echo | ls
       
       - name: Build project
-        run: yarn build
+        run: |
+          npm install -g pnpm
+          pnpm
+          yarn build
       
       - name: test AgroChain
         run: yarn workspace @darcher/examples experiment:AgroChain
