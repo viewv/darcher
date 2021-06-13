@@ -58,11 +58,15 @@ jobs:
         run: |
           wget https://zenodo.org/record/4893187/files/ethash.tar?download=1 -O ethash.tar
           tar xvf ethash.tar
+      
+      - name: ls
+        run: echo | ls
         
       - name: Setup Project
-        run: |
-          yarn
-          yarn build
+        run: yarn
+      
+      - name: Build project
+        run: yarn build
       
       - name: test AgroChain
         run: yarn workspace @darcher/examples experiment:AgroChain
