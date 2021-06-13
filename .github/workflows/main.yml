@@ -55,9 +55,10 @@ jobs:
           tar -xvzf ChromeProfile.tar.gz
           
       - name: Download ethash
-        run: |
-          wget https://zenodo.org/record/4893187/files/ethash.tar?download=1 -O ethash.tar
-          tar xvf ethash.tar
+        run: wget https://zenodo.org/record/4893187/files/ethash.tar?download=1 -O ethash.tar
+          
+      - name: Extract ethash
+          tar -xf ethash.tar -C ./ethash
       
       - name: ls
         run: echo | ls
