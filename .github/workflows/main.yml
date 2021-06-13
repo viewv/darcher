@@ -49,16 +49,20 @@ jobs:
       - name: Setup chrome driver
         uses: nanasess/setup-chromedriver@master
         
-      - name: Setup Project
-        run: |
-          yarn
-          yarn build
-          yarn workspace @darcher/go-ethereum gen:dag
-          
       - name: Download ChromeProfile
         run: |
           wget https://github.com/Troublor/darcher/releases/download/v1.0.0/ChromeProfile.tar.gz
           tar -xvzf ChromeProfile.tar.gz
+          
+      - name: Download ethash
+        run: |
+          wget https://zenodo.org/record/4893187/files/ethash.tar?download=1
+          tar xvf etchash.tar
+        
+      - name: Setup Project
+        run: |
+          yarn
+          yarn build
       
       - name: test AgroChain
         run: yarn workspace @darcher/examples experiment:AgroChain
