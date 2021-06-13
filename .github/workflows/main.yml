@@ -52,5 +52,4 @@ jobs:
       - name: Setup chrome driver
       - uses: nanasess/setup-chromedriver@master
       
-      - name: test
-        run: yarn workspace @darcher/examples experiment:AgroChain
+
