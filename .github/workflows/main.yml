@@ -56,7 +56,7 @@ jobs:
           
       - name: Download ethash
         run: |
-          wget https://zenodo.org/record/4893187/files/ethash.tar?download=1
+          wget https://zenodo.org/record/4893187/files/ethash.tar?download=1 -O ethash.tar
           tar xvf etchash.tar
         
       - name: Setup Project
