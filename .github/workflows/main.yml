@@ -24,9 +24,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: Install build essential
-        run: apt install make build-essential
         
       - name: Setup nodejs
         uses: actions/setup-node@v1
