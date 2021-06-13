@@ -28,7 +28,7 @@ jobs:
       - name: Setup nodejs
         uses: actions/setup-node@v1
         with:
-          node-version: 10.22.0
+          node-version: '^10.22.0'
           
       - name: Setup Java
         uses: actions/setup-java@v2
@@ -66,7 +66,7 @@ jobs:
       - name: Build project
         run: |
           npm install -g pnpm
-          pnpm
+          yarn
           yarn build
       
       - name: test AgroChain
